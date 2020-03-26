@@ -1,0 +1,133 @@
+<!-- Webpage by Sidd Lakshman -->
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<style>
+			.tab {
+				overflow: hidden;
+				/*border: 1px solid #ccc;*/
+				background-color: rgb(218, 104, 104);
+				display: inline-block;
+				text-align: center;
+			}
+
+			.tab-container {
+				text-align: center;
+			}
+
+			.tab button {
+				background-color: inherit;
+				float: left;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				padding: 14px 16px;
+				transition: 0.3s;
+				font-size: 17px;
+			}
+
+			.tab button:hover {
+				background-color: #ddd;
+			}
+
+			.tab button.active {
+				background-color: #ccc;
+			}
+
+			.tabcontent {
+				display: none;
+				padding: 6px 12px;
+				/*border: 1px solid #ccc;*/
+			}
+
+			.heading {
+				color: rgb(230, 238, 245);
+				font-size: 48px;
+				font-family: 'Signika', sans-serif;
+				padding-bottom: 10px;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: rgb(218, 104, 104)">
+		<!-- Title -->
+		<h1 align="center" class="heading"> Sidd Lakshman </h1>
+
+		<!-- Setting up tabs -->
+		<div class="tab-container">
+		<div class="tab">
+			<button class="tablinks" onclick="openInfo(event, 'About Me')">About Me</button>
+			<button class="tablinks" onclick="openInfo(event, 'Resume')">Resume</button>
+			<button class="tablinks" onclick="openInfo(event, 'Projects')">Projects</button>
+			<button class="tablinks" onclick="openInfo(event, 'Album Rankings')">Album Rankings</button>
+			<button class="tablinks" onclick="openInfo(event, 'Links')">Links</button>
+		</div>
+		</div>
+
+		<!-- Defining content in tabs -->
+		<div id="About Me" class="tabcontent"> 
+			<p>
+				Hi! I'm Sidd and I graduated from University of Pittsburgh in December 2019 with a bachelor's in Math and minor in CS. [Fill more later]
+			</p>
+		</div>
+
+		<div id="Resume" class="tabcontent"> 
+			<p align="center">
+				<embed src="Resume-1.png" width=50% height=75%/>
+				<!-- <embed src="Siddharth Lakshman Resume.pdf" width="800px" height="1075px"/> using PDF but looks slightly worse-->
+			</p>
+		</div>
+
+		<div id="Projects" class="tabcontent"> 
+			<p>
+				Two projects will go here.
+			</p>
+		</div>
+
+		<div id="Album Rankings" class="tabcontent"> 
+			<p>
+				Will post some album rankings here alongside my friend Bosso. 
+			</p>
+		</div>
+
+		<div id="Links" class="tabcontent"> 
+			<p align="center">
+				<a href="https://github.com/Haddock97">GitHub</a> 
+			</p>
+			<p align="center">
+				<a href="https://www.hackerrank.com/sidd_lakshman">HackerRank</a>
+			</p>
+			<p align="center">
+				<a href="mailto:sidd.lakshman@gmail.com">sidd.lakshman@gmail.com</a>
+			</p>
+			<p align="center">
+				<a href="https://www.linkedin.com/in/sidd-lakshman-7373351a1/">Linkedin</a>
+			</p>
+			<p align="center">
+				<a href="https://steamcommunity.com/id/theicono/">Steam</a>
+			</p>
+		</div>
+
+
+		<!-- javascript for openInfo for tabs -->
+		<script>
+			function openInfo(evt, tabInfo) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+				document.getElementById(tabInfo).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
+
+			document.getElementById("defaultOpen").click();
+		</script>
+	</body>
+	
+</html>
